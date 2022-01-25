@@ -4,7 +4,8 @@ const express = require('express')
 process.env.PORT = 3000
 
 app.get("/", (req, res)=>{
-    res.status(200).send({"STATUS":"SUCCESS"})
+    res.set('WWW-Authenticate', 'Basic realm="Access to Index')
+    res.status(401).send("Unauthorized access")
 })
 
 app.listen(3000 , ()=>{
