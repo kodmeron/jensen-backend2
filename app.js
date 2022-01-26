@@ -13,7 +13,7 @@ app.get("/", (req, res)=>{
 
     const [name, password] = Buffer.from(encodedAuth, 'base64')
     .toString().split(':')
-    if (user===credentials.secretUser && password===credentials.secretPassword){
+    if (username===credentials.secretUser && password===credentials.secretPassword){
         res.status(200).send({"STATUS":"SUCCESS BRRRROOOORRRR"})
     }else{
         res.set('WWW-Authenticate', 'Basic realm="Access to Index')
